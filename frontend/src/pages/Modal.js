@@ -69,7 +69,7 @@ function Modal(props) {
                   <td className="flex items-center gap-2">
                     {<FaCalendar />}{" "}
                     {data.activity.meetingDays.length >= 2
-                      ? data.activity.meetingDays.join(", ")
+                      ? data.activity.meetingDays.filter(Boolean).join(", ")
                       : data.activity.meetingDays}
                   </td>
                   <td className="flex items-center gap-2">

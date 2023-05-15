@@ -120,7 +120,9 @@ const CenterBox = () => {
       </button>
 
       <button
-        onClick={() => history.push("/searchpage")}
+        onClick={() =>
+          history.push("/searchpage?name=&categories=&availableDays=")
+        }
         className="all-button mt-2"
       >
         Show me all clubs!

@@ -29,7 +29,9 @@ const ReusableClub = (props) => {
             style={{ display: "inline-block" }}
           />
           <p class="col-span-1" style={{ display: "inline-block" }}>
-            {clubs.getDate().length > 6 ? "Everyday" : clubs.getDate()}{" "}
+            {clubs.getDate().length >= 2
+              ? clubs.getDate().filter(Boolean).join(", ")
+              : clubs.getDate()}
           </p>
         </div>
         <div style={{ display: "inline-block" }}>
