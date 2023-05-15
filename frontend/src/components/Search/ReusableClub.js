@@ -61,9 +61,13 @@ const ReusableClub = (props) => {
             className="mb-1 mr-2"
             style={{ display: "inline-block" }}
           />
-          <p class="col-span-1" style={{ display: "inline-block" }}>
+          <a
+            href={clubs.getSponsor()}
+            class="col-span-1"
+            style={{ display: "inline-block" }}
+          >
             {clubs.getSponsor()}
-          </p>
+          </a>
         </div>
       </div>
     </div>

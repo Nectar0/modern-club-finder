@@ -43,7 +43,7 @@ function Modal(props) {
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur">
-        <div className="relative z-10 bg-white rounded-lg p-8 shadow-lg max-w-lg">
+        <div className="relative z-10 bg-white rounded-lg p-8 shadow-lg max-w-screen-sm overflow-y-auto">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold">{data.activity.name}</h2>
 
@@ -52,7 +52,13 @@ function Modal(props) {
             </button>
           </div>
 
-          <div className="bg-black-100 pb-4">{data.activity.categories}</div>
+          <div className="bg-black-100 pb-4 inline-block">
+            {data.activity.categories.map((category, index) => (
+              <span className="mr-2 bg-slate-100 rounded-lg p-2" key={index}>
+                {category}
+              </span>
+            ))}
+          </div>
 
           <p className="pb-4 text-gray-400">{data.activity.description}</p>
 
@@ -62,8 +68,8 @@ function Modal(props) {
                 <tr>
                   <td className="flex items-center gap-2">
                     {<FaCalendar />}{" "}
-                    {data.activity.meetingDays.length > 6
-                      ? "Everyday"
+                    {data.activity.meetingDays.length >= 2
+                      ? data.activity.meetingDays.join(", ")
                       : data.activity.meetingDays}
                   </td>
                   <td className="flex items-center gap-2">
@@ -83,7 +89,12 @@ function Modal(props) {
                     {<FaEnvelope />} bob.brown@d214.org
                   </td>
                   <td className="flex items-center gap-2">
-                    {<FaExternalLinkAlt />} {data.activity.link}
+                    {<FaExternalLinkAlt />}{" "}
+                    {data.activity.link ? (
+                      <a href={data.activity.link}>{data.activity.link}</a>
+                    ) : (
+                      "N/A"
+                    )}
                   </td>
                 </tr>
               </tbody>

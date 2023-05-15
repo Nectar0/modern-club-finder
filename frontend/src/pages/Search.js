@@ -13,7 +13,9 @@ const SearchPage = () => {
   return (
     <div className="h-screen w-screen">
       <Header />
-      <button onClick={handleClick} className="back-button">&lt; Back</button>
+      <button onClick={handleClick} className="back-button">
+        &lt; Back
+      </button>
       <Club />
     </div>
   );
