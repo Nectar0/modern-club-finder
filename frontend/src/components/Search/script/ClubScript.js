@@ -1,47 +1,61 @@
 class Clubs {
-    constructor([id, clubName, categories, description, date, time, room, sponsor, email]) {
-        this.id = id;
-        this.clubName = clubName;
-        this.categories = categories;
-        this.description = description;
-        this.date = date;
-        this.time = time;
-        this.room = room;
-        this.sponsor = sponsor;
-        this.email = email;
-    }
+  constructor([
+    id,
+    clubName,
+    categories,
+    description,
+    date,
+    time,
+    room,
+    sponsor,
+    email,
+  ]) {
+    this.id = id;
+    this.clubName = clubName;
+    this.categories = categories;
+    this.description = description;
+    this.date = date;
+    this.time = time;
+    this.room = room;
+    this.sponsor = sponsor;
+    this.email = email;
+  }
 
-    getClubName() {
-        return this.clubName;
-    }
+  getClubName() {
+    return this.clubName;
+  }
 
-    getCategories() {
-        return this.categories;
-    }
+  getCategories() {
+    return this.categories;
+  }
 
-    getDescription() {
-        return this.description;
-    }
+  getDescription() {
+    return this.description;
+  }
 
-    getDate() {
-        return this.date;
-    }
-    
-    getTime() {
-        return this.time;
-    }
+  getDate() {
+    return this.date;
+  }
 
-    getRoom() {
-        return `Room ${this.room}`;
-    }
+  getTime() {
+    return this.time;
+  }
 
-    getSponsor() {
-        return `Sponsored by ${this.sponsor}`;
-    }
+  getRoom() {
+    return `${this.room}`;
+  }
 
-    getEmail() {
-        return this.email;
+  getSponsor() {
+    if (this.sponsor) {
+      return `${this.sponsor}`;
+    } else {
+      return "N/A";
     }
+  }
+
+  getEmail() {
+    return this.email;
+  }
 }
 
 export default Clubs;

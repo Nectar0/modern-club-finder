@@ -15,7 +15,7 @@ const ReusableClub = (props) => {
   });
 
   return (
-    <div className="club-box inline-block pr-2 transition-all duration-500 ease-in-out hover:scale-105">
+    <div className="club-box pr-2 transition-all duration-500 ease-in-out hover:scale-105">
       <h1 className="heading-component">{clubs.getClubName()}</h1>
 
       <div style={{ display: "inline-block" }}>{subComponents}</div>
@@ -29,7 +29,7 @@ const ReusableClub = (props) => {
             style={{ display: "inline-block" }}
           />
           <p class="col-span-1" style={{ display: "inline-block" }}>
-            {clubs.getDate()}{" "}
+            {clubs.getDate().length > 6 ? "Everyday" : clubs.getDate()}{" "}
           </p>
         </div>
         <div style={{ display: "inline-block" }}>
@@ -39,7 +39,9 @@ const ReusableClub = (props) => {
             className="mb-1 mr-2"
             style={{ display: "inline-block" }}
           />
-          <p class="col-span-1" style={{ display: "inline-block" }}>{clubs.getRoom()}</p>
+          <p class="col-span-1" style={{ display: "inline-block" }}>
+            {clubs.getRoom()}
+          </p>
         </div>
         <div style={{ display: "inline-block" }}>
           <img
@@ -48,7 +50,9 @@ const ReusableClub = (props) => {
             className="mb-1 mr-2"
             style={{ display: "inline-block" }}
           />
-          <p class="col-span-1" style={{ display: "inline-block" }}>{clubs.getTime()}</p>
+          <p class="col-span-1" style={{ display: "inline-block" }}>
+            {clubs.getTime()}
+          </p>
         </div>
         <div style={{ display: "inline-block" }}>
           <img
@@ -57,7 +61,9 @@ const ReusableClub = (props) => {
             className="mb-1 mr-2"
             style={{ display: "inline-block" }}
           />
-          <p class="col-span-1" style={{ display: "inline-block" }}>{clubs.getSponsor()}</p>
+          <p class="col-span-1" style={{ display: "inline-block" }}>
+            {clubs.getSponsor()}
+          </p>
         </div>
       </div>
     </div>
