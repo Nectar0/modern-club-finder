@@ -8,32 +8,24 @@ import Chevron from "../Homepage/resources/Chevron.png";
 import { useHistory } from "react-router-dom";
 
 const CenterBox = () => {
-
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
 
   const subjects = ["Coding", "Math", "Science", "English", "History"];
   const subComponents = [];
   subjects.forEach((sub) => {
-    subComponents.push(
-    <Category 
-    sub={sub} 
-    />);
+    subComponents.push(<Category sub={sub} />);
   });
 
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   const dayComponents = [];
   days.forEach((day) => {
-    dayComponents.push(
-      <DaysOfWeek
-      day={day}
-    />
-    );
+    dayComponents.push(<DaysOfWeek day={day} />);
   });
 
   const history = useHistory();
 
-   const handleClick = () => {
+  const handleClick = () => {
     const name = document.getElementById("my-text-field").value.trim();
     const categories = document.querySelectorAll(".category-clicked");
     const days = document.querySelectorAll(".day-clicked");
@@ -48,7 +40,7 @@ const CenterBox = () => {
       availableDays: selectedDays.join(","),
     });
     const search = queryParams.toString() ? `?${queryParams.toString()}` : "";
-    
+
     history.push(`/searchpage${search}`);
   };
 
@@ -112,7 +104,10 @@ const CenterBox = () => {
 
       <br />
 
-      <button onClick={handleClick} className="next-button transition-all duration-500 ease-in-out hover:scale-105">
+      <button
+        onClick={handleClick}
+        className="next-button transition-all duration-500 ease-in-out hover:scale-105"
+      >
         <div style={{ display: "inline-block" }}>
           <h2 style={{ display: "inline-block" }}>Find Clubs</h2>
           <img
@@ -124,7 +119,12 @@ const CenterBox = () => {
         </div>
       </button>
 
-      <button onClick={() => history.push('/searchpage')} className="all-button mt-2">Show me all clubs!</button>
+      <button
+        onClick={() => history.push("/searchpage")}
+        className="all-button mt-2"
+      >
+        Show me all clubs!
+      </button>
     </div>
   );
 };

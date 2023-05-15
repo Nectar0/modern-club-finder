@@ -9,7 +9,9 @@ const Header = () => {
         Find your next Hersey club!{" "}
         <span style={{ fontWeight: "bold" }}>Click </span>
         <Link to="/stafflogin" className="btn btn-primary">
-          <u><span style={{ fontWeight: "bold" }}>here</span></u>
+          <u>
+            <span style={{ fontWeight: "bold" }}>here</span>
+          </u>
         </Link>
         <span style={{ fontWeight: "bold" }}> for Staff Login page.</span>
       </h2>
